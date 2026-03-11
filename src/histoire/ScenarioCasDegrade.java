@@ -9,7 +9,7 @@ public class ScenarioCasDegrade {
 		Gaulois obelix = new Gaulois("Obélix", 25);
 		Gaulois asterix = new Gaulois("Astérix", 8);
 		//etal.occuperEtal(asterix, "fleurs", 20);
-		
+		//te
 		try {
 	        System.out.println(etal.acheterProduit(5, obelix)); // etal non occuper
 	    } catch (IllegalArgumentException e) {
