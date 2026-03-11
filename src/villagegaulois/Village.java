@@ -62,6 +62,7 @@ public class Village {
 		return chaine.toString();
 	}
 	
+	
 	//TP1 modification 
 	// Class intern 
 	private class Marche{
