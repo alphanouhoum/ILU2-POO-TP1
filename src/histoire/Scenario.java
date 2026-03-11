@@ -24,25 +24,35 @@ public class Scenario {
 		village.ajouterHabitant(obelix);
 		village.ajouterHabitant(druide);
 		village.ajouterHabitant(abraracourcix);
-		village.afficherVillageois();
 		
-		village.installerVendeur(bonemine, "fleurs", 14);
+		
+//		System.out.println(village.rechercherVendeursProduit("fleurs"));
+		
+//		System.out.println(village.installerVendeur(bonemine, "fleurs", 14));
+
+//		System.out.println(village.rechercherVendeursProduit("fleurs"));
+		System.out.println(village.installerVendeur(bonemine, "fleurs", 20));
+		System.out.println(village.rechercherVendeursProduit("fleurs"));
+		System.out.println(village.installerVendeur(assurancetourix, "lyres", 5));
+		System.out.println(village.installerVendeur(obelix, "menhirs", 2));
+		System.out.println(village.installerVendeur(druide, "fleurs", 10));
 
 		System.out.println(village.rechercherVendeursProduit("fleurs"));
-//		System.out.println(village.installerVendeur(bonemine, "fleurs", 20));
-//		System.out.println(village.rechercherVendeursProduit("fleurs"));
-//		System.out
-//				.println(village.installerVendeur(assurancetourix, "lyres", 5));
-//		System.out.println(village.installerVendeur(obelix, "menhirs", 2));
-//		System.out.println(village.installerVendeur(druide, "fleurs", 10));
-
-//		System.out.println(village.rechercherVendeursProduit("fleurs"));
-//		Etal etalFleur = village.rechercherEtal(bonemine);
-//		System.out.println(etalFleur.acheterProduit(10, abraracourcix));
-//		System.out.println(etalFleur.acheterProduit(15, obelix));
-//		System.out.println(etalFleur.acheterProduit(15, assurancetourix));
-//		System.out.println(village.partirVendeur(bonemine));
-//		System.out.println(village.afficherMarche());
+		
+		Etal etalFleur = village.rechercherEtal(bonemine);
+		
+		try {
+			System.out.println(etalFleur.acheterProduit(10, abraracourcix));
+		} catch (IllegalArgumentException e) {
+	        System.err.println("Erreur : " + e.getMessage());
+		}catch (IllegalStateException e) {
+	        System.err.println("Erreur état : " + e.getMessage());
+	    }
+		
+		System.out.println(etalFleur.acheterProduit(15, obelix));
+		System.out.println(etalFleur.acheterProduit(15, assurancetourix));
+		System.out.println(village.partirVendeur(bonemine));
+		System.out.println(village.afficherMarche());
 	}
 
 }
