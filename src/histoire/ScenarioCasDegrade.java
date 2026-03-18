@@ -8,15 +8,18 @@ public class ScenarioCasDegrade {
 		Etal etal = new Etal();
 		Gaulois obelix = new Gaulois("Obélix", 25);
 		Gaulois asterix = new Gaulois("Astérix", 8);
-		//etal.occuperEtal(asterix, "fleurs", 20);
+		etal.occuperEtal(asterix, "fleurs", 20);
 		
 		
 		try {
-	        System.out.println(etal.acheterProduit(5, obelix)); // etal non occuper
-	    } catch (IllegalArgumentException e) {
-	        System.err.println("Erreur : " + e.getMessage());
+	        System.out.println(etal.acheterProduit(-5, obelix)); // etal non occuper
+	    
+		}catch(NullPointerException e){
+			e.printStackTrace();
+		}catch (IllegalArgumentException e) {
+			e.printStackTrace();
 	    }catch (IllegalStateException e) {
-	        System.err.println("Erreur état : " + e.getMessage());
+	        e.printStackTrace();
 	    }
 		
 		System.out.println("Fin test");

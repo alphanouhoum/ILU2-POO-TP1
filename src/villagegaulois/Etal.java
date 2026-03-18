@@ -56,6 +56,9 @@ public class Etal {
 	}
 
 	public String acheterProduit(int quantiteAcheter, Gaulois acheteur) {
+		if(acheteur == null) {
+			throw new NullPointerException();
+		}
 		
 		if (quantiteAcheter < 0) {
 			throw new IllegalArgumentException("La quantite doit étre positive");
