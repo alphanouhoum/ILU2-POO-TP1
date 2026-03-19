@@ -70,20 +70,20 @@ public class Village {
 	
 	//TP1 modification 
 	// Class intern 
-	private class Marche{
+	private static class Marche{
 		private Etal[] etals;
 		
-		public Marche (int nbEtals){
+		private Marche (int nbEtals){
 			etals = new Etal[nbEtals];
 		}
 		
-		public void utiliserEtal (int indiceEtal, Gaulois vendeur, String produit, int nbProduit) {
+		private void utiliserEtal (int indiceEtal, Gaulois vendeur, String produit, int nbProduit) {
 			Etal etal = new Etal();
 			etal.occuperEtal(vendeur, produit, nbProduit);
 			etals[indiceEtal] = etal;
 		}
 		
-		public int trouverEtalLibre () {
+		private int trouverEtalLibre () {
 			for(int i = 0; i<etals.length; i++) {
 				if(etals[i] == null) {
 					return i;
@@ -92,7 +92,7 @@ public class Village {
 			return -1;
 		}
 		
-		public Etal[] trouverEtals(String produit) {
+		private Etal[] trouverEtals(String produit) {
 			int nbEtalsProduit = 0;
 			for (Etal etal : etals) {
 				if(etal != null && etal.contientProduit(produit)) {
@@ -113,7 +113,7 @@ public class Village {
 					
 		}
 		
-		public Etal trouverVendeur(Gaulois gaulois) {
+		private Etal trouverVendeur(Gaulois gaulois) {
 			for (Etal etal : etals) {
 				if(etal != null && etal.getVendeur().equals(gaulois)) {
 					return etal;
@@ -122,7 +122,7 @@ public class Village {
 			return null;
 		}
 		
-		public Boolean partirVendeurEtal(Gaulois vendeur) {
+		private Boolean partirVendeurEtal(Gaulois vendeur) {
 			Etal vendeurEtal = marche.trouverVendeur(vendeur);
 			for (int i = 0; i< etals.length; i++){
 				if (etals[i] != null && etals[i].getVendeur().getNom() == vendeur.getNom()) {
@@ -134,7 +134,7 @@ public class Village {
 			
 		}
 		
-		public String afficherMarche() {
+		private String afficherMarche() {
 			StringBuilder string = new StringBuilder();
 			int nbEtalVide=0;
 			for (Etal etal : etals) {
@@ -152,7 +152,7 @@ public class Village {
 		}
 				
 		
-		public String libererEtal(Gaulois vendeur) {
+		private String libererEtal(Gaulois vendeur) {
 		    for (int i = 0; i < etals.length; i++) {
 		        if (etals[i] != null && etals[i].getVendeur().equals(vendeur)) {
 		            String message = etals[i].libererEtal();
